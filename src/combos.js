@@ -25,9 +25,24 @@ export function utilProducts() {
     { img: 'img/coca-cola.png' },
   ]
   
+  const containerCombos = document.getElementById('combos')
   const containerMenu = document.getElementById('menu')
   const containerBanner = document.getElementById('carousel-track')
 
+   // Cards Combos
+
+   combosSemana.forEach(combo => {
+    const divCombos = document.createElement("div")
+
+    divCombos.className = "grid gap-3 bg-black p-3 mx-auto items-center shadow-[0_0_12px_rgb(237,187,25)] rounded-lg combo-card"
+    divCombos.innerHTML = `
+    <img src="${combo.img}" class="mx-auto sm:flex w-full h-40 rounded-md"/>
+    <h1 class="font-semibold text-center text-2xl">${combo.title}</h1>
+    <p class="text-gray-400 text-center">${combo.desc} <span class="text-yellow-400">${combo.price}</span></p>
+    <button class="combo-card bg-red-900 text-center p-3 w-fit mx-auto rounded-sm">adicionar ao carrinho</buttom>
+    `
+    containerCombos.appendChild(divCombos)
+    })
 
   // Menu itens
   itensMenu.forEach((item) => {

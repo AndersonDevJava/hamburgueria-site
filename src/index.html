@@ -100,7 +100,26 @@
           ></div>
         </div>
       </figure>
+
+      <!-- COMBOS -->
+      <section class="min-h-230 max-w-6xl mx-auto px-6 w-full my-10 rounded-lg">
+        <h1 class="text-2xl text-center font-thin mt-10 mb-6">
+          Combos da Semana!
+        </h1>
+        <div
+          id="combos"
+          class="grid grid-cols-1 sm:grid-cols-3 p-4 gap-8"
+        ></div>
+      </section>
     </main>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      class="bg-black text-white p-3 rounded-full border fixed bottom-3 right-3 z-50"
+    >
+      <i class="fa fa-arrow-up"></i>
+    </button>
 
     <script type="module" src="main.js"></script>
   </body>
