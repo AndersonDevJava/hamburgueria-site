@@ -1,6 +1,26 @@
 export function utilProducts() {
 
-    
+    const combosSemana = [
+    {
+      img: 'img/imgcomboSemana/especialCB.png', title: 'Especial',cdesc: '1 Hamburguer tradicional, 1 batata média e 1 coca lata.', price: '35,99', icone: "fa-solid fa-cart-shopping"
+    },
+    {
+      img: 'img/imgcomboSemana/Quatroirmaos.png', title: 'Quatro Irmãos', desc: '4 hamburguers tradicionais, carne, pão alface molho e picles.', price: '35,99', icone: "fa-solid fa-cart-shopping"
+    },
+    {
+      img: 'img/imgcomboSemana/especialEspecialCB.png', title: 'Especial especial', desc: '1 pizza pequena de calabresa com 1 coca lata.', price: '35,99', icone: "fa-solid fa-cart-shopping"
+    },
+    {
+      img: 'img/imgcomboSemana/cafeManhaCB.jpeg', title: 'Café da Manhã', desc: 'Servimos apenas no restaurante local.', price: '35,99', icone: "fa-solid fa-cart-shopping"
+    },
+    {
+      img: 'img/imgcomboSemana/solteiroCB.png', title: 'Solteiro', desc: '1 hamburguer com 1 batata média.', price: '35,99', icone: "fa-solid fa-cart-shopping"
+    },
+    {
+      img: 'img/imgcomboSemana/familiaCB.png', title: 'Família', desc: '3 hamburguers tradicionais, 1 coca 2L, 1 pizza média e 2 batatas médias', price: '35,99', icone: "fa-solid fa-cart-shopping"
+    },
+  ]
+
   const itensMenu = [
     { img: 'img/imgMenu/Salgados/hamb-1Mn.png', title: 'Hamburgues' },
     { img: 'img/imgMenu/Salgados/coxinhaMn.png', title: 'Salgados' },
