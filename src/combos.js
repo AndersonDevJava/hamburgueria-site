@@ -9,8 +9,25 @@ export function utilProducts() {
     { img: 'img/imgMenu/Gelados/acaiMn.png', title: 'acaí' },
     { img: 'img/imgMenu/Liquidos/bebidasMn.png', title: 'Bebidas' },
   ]
+
+    const banner = [
+    { img: 'img/hamb-2.png' },
+    { img: 'img/agua.png' },
+    { img: 'img/hamb-3.png' },
+    { img: 'img/Suco-1.png' },
+    { img: 'img/hamb-4.png' },
+    { img: 'img/suco-2.png' },
+    { img: 'img/hamb-5.png' },
+    { img: 'img/acaii.png' },
+    { img: 'img/hamb-6.png' },
+    { img: 'img/guarana.png' },
+    { img: 'img/hamb-7.png' },
+    { img: 'img/coca-cola.png' },
+  ]
   
   const containerMenu = document.getElementById('menu')
+  const containerBanner = document.getElementById('carousel-track')
+
 
   // Menu itens
   itensMenu.forEach((item) => {
@@ -24,4 +41,16 @@ export function utilProducts() {
     `
     containerMenu.appendChild(limenu)
   })
+
+    // Banner
+  banner.forEach((banner) => {
+    const divbanner = document.createElement('div')
+
+    divbanner.className = `w-50 h-auto rounded-lg shadow-md mx-2 flex-shrink-0`
+
+    divbanner.innerHTML = `
+        <img src="${banner.img}" class="w-50 h-auto rounded-lg shadow-md"/>
+        `
+    containerBanner.appendChild(divbanner)
+  })   
 }
