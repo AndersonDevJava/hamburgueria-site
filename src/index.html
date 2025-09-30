@@ -1,13 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
-</head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <meta name="description" content="Delivery de comida" />
+    <meta name="keywords" content="hamburguer, pizza, delivery" />
+    <title>Dev Big Burguer</title>
+  </head>
+  <body class="bg-black text-white">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-black">
+      <div
+        class="grid grid-cols-1 sm:flex items-center gap-4 sm:justify-around shadow-[0_0_12px_rgb(237,187,25)]"
+      >
+        <img
+          src="img/imgheader/motoboy_entrega.png"
+          class="w-25 h-25 mx-auto sm:m-0"
+        />
+        <img src="img/imgheader/image.png" class="h-12 ml-9" />
+        <button
+          id="bnt-login"
+          class="border h-fit border-amber-400 w-20 p-3 mb-2 rounded-sm mx-auto sm:m-0"
+        >
+          <p class="text-white font-semibold text-center hover:text-amber-400">
+            Login
+          </p>
+        </button>
+      </div>
+
+      <div class="flex items-center justify-between px-4 sm:mt-3">
+        <button id="menu-toggle" class="text-2xl sm:hidden">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <h2 class="flex-1 text-center">Ter a Dom 18:40 às 22:00</h2>
+        <div class="p-2 bg-red-500 w-10 text-center rounded-md">
+          <i class="fas fa-shopping-cart text-white text-sm"></i>
+        </div>
+      </div>
+
+      <!--Menu-->
+      <nav
+        id="menu"
+        class="hidden sm:flex mx-auto w-full max-w-4xl mt-6 sm:justify-between"
+      >
+        <ul
+          class="grid grid-cols-4 sm:flex sm:gap-20 xl:justify-between bg-black/80 rounded-md font-semibold"
+        ></ul>
+      </nav>
+
+      <!--Mensagem de saída-->
+      <aside id="mensagemsaida" class="bg-red-900 p-2 opacity-0">
+        <h1
+          id="mensagem"
+          class="text-center sm:text-2xl text-amber-400 font-semibold"
+        >
+          primeiro login = primeira entrega grátis
+        </h1>
+      </aside>
+    </header>
+  </body>
 </html>
