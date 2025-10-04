@@ -92,34 +92,46 @@
         id="banner"
         class="bg-black rounded-lg shadow-lg w-full mx-auto overflow-hidden"
       >
-        <div class="relative w-full h-72 overflow-hidden opacity-70">
+        <div class="relative w-full h-72 overflow-hidden">
           <div
             id="carousel-track"
             class="flex items-center h-full animate-carousel"
             style="width: max-content"
-          ></div>
+          ></div> 
         </div>
       </figure>
 
       <!-- COMBOS -->
-      <section class="min-h-230 max-w-6xl mx-auto px-6 w-full my-10 rounded-lg">
-        <h1 class="text-2xl text-center font-thin mt-10 mb-6">
+      <section class=" max-w-7xl mx-auto px-6 w-full my-10 rounded-lg">
+        <h1 id="titulo" class="text-2xl text-center font-thin mt-10 mb-6">
           Combos da Semana!
         </h1>
         <div
-          id="combos"
+          id="combos" 
           class="grid grid-cols-1 sm:grid-cols-3 p-4 gap-8"
         ></div>
+      </section>
+
+      <!--Exibir itens do menu-->
+      <section id="section-generico" class="hidden max-w-7xl mx-auto px-6  my-10">
+        <div id="div-generica" class="grid grid-cols-1 md:grid-cols-3 gap-8 "></div>
       </section>
     </main>
 
     <!-- BOTÃO VOLTAR AO TOPO -->
-    <button
-      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-      class="bg-black text-white p-3 rounded-full border fixed bottom-3 right-3 z-50"
-    >
-      <i class="fa fa-arrow-up"></i>
-    </button>
+     <div class="fixed bottom-3 right-3 z-50 md:grid md:grid-cols-1 gap-3">
+      <button
+         onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+         class="bg-black text-white p-3 rounded-full border"
+       >
+          <i class="fa fa-arrow-up"></i>
+        </button>
+        <!--BOTÃO HOUSE-->
+        <button id="buttom-house" class="bg-red-900 hidden text-white p-3 rounded-full border">
+        <a href="index.html"><i class="fa-solid fa-house"></i></a>
+      </button>
+     </div>
+      
 
     <!-- FOOTER -->
 <footer class="bg-black border-amarelo p-4 min-h-30 grid sm:flex justify-between gap-6 text-sm">

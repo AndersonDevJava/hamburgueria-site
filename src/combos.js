@@ -1,5 +1,25 @@
 export function utilProducts() {
+
 const defaultIcon = "fa-solid fa-cart-shopping";
+
+const menu = {
+  Hamburgues: [
+    {img: "img/hamb-2.png", title: "Especial 1", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
+    {img: "img/hamb-3.png", title: "Especial 2", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
+    {img: "img/hamb-4.png", title: "Especial 3", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
+    {img: "img/hamb-5.png", title: "Especial 4", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
+    {img: "img/hamb-6.png", title: "Especial 5", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
+    {img: "img/hamb-7.png", title: "Especial 6", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
+  ],
+  Salgados: [
+    {img: "img/imgMenu/Salgados/bauru.png", title: "Bauru Tradicional", desc: "Pão macio recheado com presunto, queijo derretido e toque especial da casa.", price: "12,99", icone: defaultIcon},
+    {img: "img/imgMenu/Salgados/coxinha.png", title: "Coxinha", desc: "Clássica coxinha com massa leve e recheio de frango cremoso, empanada e frita.", price: "7,49", icone: defaultIcon},
+    {img: "img/imgMenu/Salgados/enroladinho.png", title: "Enroladinho de Salsicha	", desc: "Massa dourada e fofa enrolada em salsicha suculenta, ideal para qualquer hora.", price: "6,49", icone: defaultIcon},
+    {img: "img/imgMenu/Salgados/quibe.png", title: "Quibe", desc: "Bolinho de trigo com carne moída e hortelã, frito até ficar dourado e crocante.", price: "6,49", icone: defaultIcon},
+    {img: "img/imgMenu/Salgados/paoDeQueijo.png", title: "Pão de Queijo (porção)", desc: "Porção com 5 pãezinhos de queijo, crocantes por fora e macios por dentro.", price: "10,99", icone: defaultIcon},
+    {img: "img/imgMenu/Salgados/pasteu.png", title: "Empanada", desc: "Massa crocante em formato de meia-lua, recheada com carne temperada e suculenta.", price: "6,99", icone: defaultIcon},
+  ]
+}
 
 const combos = {
   salgados: [
@@ -59,7 +79,7 @@ const combos = {
   const containerBanner = document.getElementById('carousel-track')
   const mensagemsaida = document.getElementById('mensagemsaida')
   const mensagem = document.getElementById('mensagem')
-
+  const buttomhouse = document.getElementById('buttom-house')
 
   // ===== Lógica para exibir combos pelos dias =====
 
@@ -81,10 +101,10 @@ const combos = {
 
       div.className = "grid gap-3 bg-black p-3 mx-auto items-center shadow-[0_0_12px_rgb(237,187,25)] rounded-lg combo-card"
       div.innerHTML = `
-       <img src="${item.img}" class="mx-auto sm:flex w-full h-40 rounded-md"/>
-    <h1 class="font-semibold text-center text-2xl">${item.title}</h1>
-    <p class="text-gray-400 text-center">${item.desc} <span class="text-yellow-400">${item.price}</span></p>
-    <button class="combo-card bg-red-900 text-center p-3 w-fit mx-auto rounded-sm">adicionar ao carrinho</buttom>
+      <img src="${item.img}" class="mx-auto sm:flex w-full h-50 rounded-md"/>
+      <h1 class="font-semibold text-center text-2xl">${item.title}</h1>
+      <p class="text-gray-400 text-center">${item.desc} <span class="text-yellow-400">${item.price}</span></p>
+      <button class="combo-card bg-red-900 text-center p-3 w-fit mx-auto rounded-sm">adicionar ao carrinho</buttom>
       `
       container.appendChild(div)
     })
@@ -111,8 +131,12 @@ const combos = {
       break;
   }
 
-
   // Menu itens
+
+  const containergenerico = document.getElementById("section-generico")
+  const titulo = document.getElementById('titulo')
+  const divgenerica = document.getElementById('div-generica')
+
   itensMenu.forEach((item) => {
     const limenu = document.createElement('li')
 
@@ -123,6 +147,42 @@ const combos = {
     <h3 class="text-white font-semibold text-center hover:text-red-400">${item.title}</h3>
     `
     containerMenu.appendChild(limenu)
+
+    limenu.querySelector("h3").addEventListener("click", () => {
+      Object.keys(menu).forEach((itemMenu) => {
+        if(itemMenu === item.title){
+
+
+          document.querySelectorAll("#menu li").forEach(li => {
+            li.style = "";
+          });
+
+          titulo.innerHTML = `${item.title}`
+          limenu.style = "background-color: gray; opacity: 2; border-radius: 2rem;"
+          buttomhouse.classList.remove("hidden")
+          containerCombos.classList.add("hidden")
+          containergenerico.classList.remove("hidden")
+          
+          divgenerica.innerHTML = ""
+          menu[itemMenu].forEach(produto => {
+            const divmenu = document.createElement("div");
+            divmenu.className = "h-fit p-3 mx-auto shadow-[0_0_12px_rgb(237,187,25)] flex justify-center items-center md:grid rounded-xl overflow-hidden";
+            divmenu.innerHTML = `
+            <img src="${produto.img}" class="w-26 h-1/2 md:h-43 md:w-43 mx-auto rounded-full"/>
+            <div class="md:grid md:grid-cols-1 md:gap-2 overflow-hidden">
+            <h1 class="font-semibold text-center text-2xl">${produto.title}</h1>
+            <p class="text-gray-400 text-center text-xs md:text-base mt-3">
+            ${produto.desc} <span class="text-xs md:text-base font-semibold text-yellow-500">${produto.price}</span></p>
+            <div class="mx-auto w-fit mt-4">
+            <button class="combo-card bg-red-900 text-center p-1 md:p-3 rounded-sm">adicionar ao carrinho</button>
+            </div>
+            </div>
+            `;
+            divgenerica.appendChild(divmenu);
+          })
+        }
+      })
+    })
   })
 
     // Banner
