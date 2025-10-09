@@ -60,7 +60,7 @@
           <i class="fa-solid fa-bars"></i>
         </button>
         <h2 class="flex-1 text-center">Ter a Dom 18:40 às 22:00</h2>
-        <div class="p-2 bg-red-500 w-10 text-center rounded-md">
+        <div id="shopping-carts"  class="p-2 bg-red-500 w-10 text-center rounded-md">
           <i class="fas fa-shopping-cart text-white text-sm"></i>
         </div>
       </div>
@@ -130,6 +130,20 @@
         <button id="buttom-house" class="bg-red-900 hidden text-white p-3 rounded-full border">
         <a href="index.html"><i class="fa-solid fa-house"></i></a>
       </button>
+     </div>
+
+     <!--exibindo tela carrinho-->
+     <div id="painel-car" class="hidden bg-black/60 w-full h-full fixed top-0 left-0 z-[99] justify-center items-center flex">
+      <div class="bg-blue-200 p-3 overflow-hidden min-w-[90%] min-h-[60px] md:min-w-[600] md:max-h-[500px] rounded-md">
+        <h1 class="bg-black/80 border border-white  p-2 text-white rounded-md text-center text- md:text-2xl font-semibold">Meu Carrinho</h1>
+        <!--Itens do carrinho adicionados-->
+        <div id="itens-adicioandos" class="grid grid-cols-1 max-h-[300px] overflow-y-auto pr-2"></div>
+        <!--Botões do carrinho-->
+        <div class=" button-0 z-50 justify-between flex items-center mt-2">
+          <i id="voltar" class="bg-black/80 border border-white p-2 text-white  rounded-md rounded-md fa-solid fa-arrow-left"></i>
+          <button class="bg-black/80 border border-white  p-2 text-white rounded-md">Pedido Concluído</button>
+        </div>
+      </div>
      </div>
       
 

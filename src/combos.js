@@ -80,6 +80,8 @@ const combos = {
   const mensagemsaida = document.getElementById('mensagemsaida')
   const mensagem = document.getElementById('mensagem')
   const buttomhouse = document.getElementById('buttom-house')
+  const itensadicioandos = document.getElementById('itens-adicioandos')
+
 
   // ===== Lógica para exibir combos pelos dias =====
 
@@ -95,8 +97,8 @@ const combos = {
   }, 4000)
 }
 
-   function renderPages(item, container){
-    item.forEach(item => {
+  function renderPages(item, container){
+    item.forEach((item, index) => {
       const div = document.createElement("div")
 
       div.className = "grid gap-3 bg-black p-3 mx-auto items-center shadow-[0_0_12px_rgb(237,187,25)] rounded-lg combo-card"
@@ -104,10 +106,38 @@ const combos = {
       <img src="${item.img}" class="mx-auto sm:flex w-full h-50 rounded-md"/>
       <h1 class="font-semibold text-center text-2xl">${item.title}</h1>
       <p class="text-gray-400 text-center">${item.desc} <span class="text-yellow-400">${item.price}</span></p>
-      <button class="combo-card bg-red-900 text-center p-3 w-fit mx-auto rounded-sm">adicionar ao carrinho</buttom>
+      <button id="combos-menu-${index}" class="combo-card bg-red-900 text-center p-3 w-fit mx-auto rounded-sm">adicionar ao carrinho</buttom>
       `
       container.appendChild(div)
+
+      // evento específico de cada botão
+      const id = div.querySelector(`#combos-menu-${index}`)
+      id.addEventListener("click", () => {
+        saidamensagem(`${item.title} adicionado ao carrinho`)
+        itensCarrinho(item)
+      })
     })
+  }
+
+  function itensCarrinho(item){
+    const div = document.createElement("div")
+
+    div.className = "flex gap-3 justify-center items-center p-2"
+    div.innerHTML = `
+    <h1 class="text-black font-semibold">2x</h1>
+    <img src="${item.img}" class="w-20 h-20 rounded-md"/>
+    <div class="overflow-hidden w-[70%]">
+      <h1 class="text-black font-bold">${item.title}</h1>
+      <p class="text-black">
+      ${item.desc} <span class="text-red-400 font-semibold">${item.price}</span></p>
+    </div>
+    <div class="grid grid-col-1">
+      <i class="fa-solid fa-plus opacity-60 text-center text-white md:p-2 p-2 bg-black rounded-md"></i>
+      <i class="fa-solid fa-xmark text-black text-2xl bg-red-400 p-2 rounded-md"></i>
+      <i class="fa-solid fa-minus opacity-60 text-center text-white md:p-2 p-2 bg-black rounded-md"></i>
+    </div>
+    `
+    itensadicioandos.appendChild(div)
   }
 
   switch (dayNow){
@@ -132,7 +162,6 @@ const combos = {
   }
 
   // Menu itens
-
   const containergenerico = document.getElementById("section-generico")
   const titulo = document.getElementById('titulo')
   const divgenerica = document.getElementById('div-generica')
@@ -152,7 +181,6 @@ const combos = {
       Object.keys(menu).forEach((itemMenu) => {
         if(itemMenu === item.title){
 
-
           document.querySelectorAll("#menu li").forEach(li => {
             li.style = "";
           });
@@ -164,7 +192,7 @@ const combos = {
           containergenerico.classList.remove("hidden")
           
           divgenerica.innerHTML = ""
-          menu[itemMenu].forEach(produto => {
+          menu[itemMenu].forEach((produto, index) => {
             const divmenu = document.createElement("div");
             divmenu.className = "h-fit p-3 mx-auto shadow-[0_0_12px_rgb(237,187,25)] flex justify-center items-center md:grid rounded-xl overflow-hidden";
             divmenu.innerHTML = `
@@ -174,11 +202,17 @@ const combos = {
             <p class="text-gray-400 text-center text-xs md:text-base mt-3">
             ${produto.desc} <span class="text-xs md:text-base font-semibold text-yellow-500">${produto.price}</span></p>
             <div class="mx-auto w-fit mt-4">
-            <button class="combo-card bg-red-900 text-center p-1 md:p-3 rounded-sm">adicionar ao carrinho</button>
+            <button id="itens-menu-${index}" class="combo-card bg-red-900 text-center p-1 md:p-3 rounded-sm">adicionar ao carrinho</button>
             </div>
             </div>
-            `;
+            `
             divgenerica.appendChild(divmenu);
+            
+            const id = divmenu.querySelector(`#itens-menu-${index}`)
+            id.addEventListener("click", () => {
+              saidamensagem(`${produto.title} adicioando ao Carrinho`)
+              itensCarrinho(produto)
+            })
           })
         }
       })
