@@ -81,6 +81,19 @@ const combos = {
   const mensagem = document.getElementById('mensagem')
   const buttomhouse = document.getElementById('buttom-house')
   const itensadicioandos = document.getElementById('itens-adicioandos')
+  const carrinho = []
+
+function addItemCar(produto) {
+  const jaExiste = carrinho.some((item) => item.title === produto.title)
+
+  if (!jaExiste) {
+    carrinho.push(produto)
+    saidamensagem(`Item adicionado ao carrinho`)
+    itensCarrinho(produto)
+  } else {
+    saidamensagem(`Esse produto já está na lista.\nCaso queira mais, clique no ícone [ + ]`)
+  }
+}
 
 
   // ===== Lógica para exibir combos pelos dias =====
@@ -113,8 +126,7 @@ const combos = {
       // evento específico de cada botão
       const id = div.querySelector(`#combos-menu-${index}`)
       id.addEventListener("click", () => {
-        saidamensagem(`${item.title} adicionado ao carrinho`)
-        itensCarrinho(item)
+        addItemCar(item)
       })
     })
   }
@@ -124,7 +136,7 @@ const combos = {
 
     div.className = "flex gap-3 justify-center items-center p-2"
     div.innerHTML = `
-    <h1 class="text-black font-semibold">2x</h1>
+    <h1 class="text-black font-semibold">1x</h1>
     <img src="${item.img}" class="w-20 h-20 rounded-md"/>
     <div class="overflow-hidden w-[70%]">
       <h1 class="text-black font-bold">${item.title}</h1>
@@ -137,6 +149,29 @@ const combos = {
       <i class="fa-solid fa-minus opacity-60 text-center text-white md:p-2 p-2 bg-black rounded-md"></i>
     </div>
     `
+
+    let quant = 1
+    const contador = div.querySelector("h1") // o <h1> que mostra "1x"
+    const btnMais = div.querySelector(".fa-plus")
+    const btnMenos = div.querySelector(".fa-minus")
+    const btnExcluir = div.querySelector(".fa-xmark")
+
+    btnMais.addEventListener("click", () => {
+      quant++
+      contador.innerHTML = `${quant}x`
+    })
+    btnMenos.addEventListener("click", () => {
+      quant--
+      contador.innerHTML = `${quant}x`
+      if(quant < 1){
+        div.remove()
+        carrinho.splice(carrinho.indexOf(item), 1)
+      }
+    })
+    btnExcluir.addEventListener("click", () => {
+      div.remove()
+      carrinho.splice(carrinho.indexOf(item), 1)
+    })
     itensadicioandos.appendChild(div)
   }
 
@@ -207,17 +242,16 @@ const combos = {
             </div>
             `
             divgenerica.appendChild(divmenu);
-            
+
             const id = divmenu.querySelector(`#itens-menu-${index}`)
             id.addEventListener("click", () => {
-              saidamensagem(`${produto.title} adicioando ao Carrinho`)
-              itensCarrinho(produto)
-            })
+            addItemCar(produto)
           })
-        }
-      })
+        })
+      }
     })
   })
+})
 
     // Banner
   banner.forEach((banner) => {
