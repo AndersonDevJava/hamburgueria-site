@@ -88,13 +88,12 @@ function addItemCar(produto) {
 
   if (!jaExiste) {
     carrinho.push(produto)
-    saidamensagem(`Item adicionado ao carrinho`)
+    saidamensagem(`${produto.title} adicionado ao carrinho`)
     itensCarrinho(produto)
   } else {
     saidamensagem(`Esse produto já está na lista.\nCaso queira mais, clique no ícone [ + ]`)
   }
 }
-
 
   // ===== Lógica para exibir combos pelos dias =====
 
@@ -182,17 +181,17 @@ function addItemCar(produto) {
     case "Domingo":
     case "Terça":
       renderPages(combos.salgados, containerCombos);
-      saidamensagem("Primeiro Login = Primeira entraga grátis");
+      saidamensagem("Primeiro Login = Primeira entrega grátis");
       break;
     case "Quarta":
     case "Quinta":
       renderPages(combos.doces, containerCombos);
-      saidamensagem("Primeiro Login = Primeira entraga grátis");
+      saidamensagem("Primeiro Login = Primeira entrega grátis");
       break;
     case "Sexta":
     case "Sábado":
       renderPages(combos.mistos, containerCombos);
-      saidamensagem("Primeiro Login = Primeira entraga grátis");
+      saidamensagem("Primeiro Login = Primeira entrega grátis");
       break;
   }
 
@@ -264,4 +263,6 @@ function addItemCar(produto) {
         `
     containerBanner.appendChild(divbanner)
   })   
+
+  return { saidamensagem, carrinho }
 }

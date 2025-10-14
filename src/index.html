@@ -1,176 +1,242 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link href="./output.css" rel="stylesheet" />
-    <meta name="description" content="Delivery de comida" />
-    <meta name="keywords" content="hamburguer, pizza, delivery" />
-    <title>Dev Big Burguer</title>
-    <style>
-      .combo-card {
-        transition: transform 0.3s;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="./output.css" rel="stylesheet" />
+  <meta name="description" content="Delivery de comida" />
+  <meta name="keywords" content="hamburguer, pizza, delivery" />
+  <title>Dev Big Burguer</title>
+  <style>
+    .combo-card {
+      transition: transform 0.3s;
+    }
+
+    .combo-card:hover {
+      transform: translateY(-0.5rem);
+    }
+
+    .combo-card:hover {
+      transform: translateY(-0.5rem);
+    }
+
+    .animate-carousel {
+      animation: carousel 40s linear infinite;
+    }
+
+    @keyframes carousel {
+      0% {
+        transform: translateX(0);
       }
-      .combo-card:hover {
-        transform: translateY(-0.5rem);
+
+      100% {
+        transform: translateX(-50%);
       }
-      .combo-card:hover {
-        transform: translateY(-0.5rem);
-      }
-      .animate-carousel {
-        animation: carousel 40s linear infinite;
-      }
-      @keyframes carousel {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-    </style>
-  </head>
-  <body class="bg-black text-white">
-    <!-- HEADER -->
-    <header class="sticky top-0 z-50 bg-black">
-      <div
-        class="grid grid-cols-1 sm:flex items-center gap-4 sm:justify-around shadow-[0_0_12px_rgb(237,187,25)]"
-      >
-        <img
-          src="img/imgheader/motoboy_entrega.png"
-          class="w-25 h-25 mx-auto sm:m-0"
-        />
-        <img src="img/imgheader/image.png" class="h-12 ml-9" />
-        <button
-          id="bnt-login"
-          class="border h-fit border-amber-400 w-20 p-3 mb-2 rounded-sm mx-auto sm:m-0"
-        >
-          <p class="text-white font-semibold text-center hover:text-amber-400">
-            Login
-          </p>
-        </button>
-      </div>
+    }
+  </style>
+</head>
 
-      <div class="flex items-center justify-between px-4 sm:mt-3">
-        <button id="menu-toggle" class="text-2xl sm:hidden">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-        <h2 class="flex-1 text-center">Ter a Dom 18:40 às 22:00</h2>
-        <div id="shopping-carts"  class="p-2 bg-red-500 w-10 text-center rounded-md">
-          <i class="fas fa-shopping-cart text-white text-sm"></i>
-        </div>
-      </div>
-
-      <!--Menu-->
-      <nav
-        id="menu"
-        class="hidden sm:flex mx-auto w-full max-w-4xl mt-6 sm:justify-between"
-      >
-        <ul
-          class="grid grid-cols-4 sm:flex sm:gap-20 xl:justify-between bg-black/80 rounded-md font-semibold"
-        ></ul>
-      </nav>
-
-      <!--Mensagem de saída-->
-      <aside id="mensagemsaida" class="bg-red-900 p-2 opacity-0">
-        <h1
-          id="mensagem"
-          class="text-center sm:text-2xl text-amber-400 font-semibold"
-        >
-          primeiro login = primeira entrega grátis
-        </h1>
-      </aside>
-    </header>
-
-    <main>
-      <!-- BANNER -->
-      <figure
-        id="banner"
-        class="bg-black rounded-lg shadow-lg w-full mx-auto overflow-hidden"
-      >
-        <div class="relative w-full h-72 overflow-hidden">
-          <div
-            id="carousel-track"
-            class="flex items-center h-full animate-carousel"
-            style="width: max-content"
-          ></div> 
-        </div>
-      </figure>
-
-      <!-- COMBOS -->
-      <section class=" max-w-7xl mx-auto px-6 w-full my-10 rounded-lg">
-        <h1 id="titulo" class="text-2xl text-center font-thin mt-10 mb-6">
-          Combos da Semana!
-        </h1>
-        <div
-          id="combos" 
-          class="grid grid-cols-1 sm:grid-cols-3 p-4 gap-8"
-        ></div>
-      </section>
-
-      <!--Exibir itens do menu-->
-      <section id="section-generico" class="hidden max-w-7xl mx-auto px-6  my-10">
-        <div id="div-generica" class="grid grid-cols-1 md:grid-cols-3 gap-8 "></div>
-      </section>
-    </main>
-
-    <!-- BOTÃO VOLTAR AO TOPO -->
-     <div class="fixed bottom-3 right-3 z-50 md:grid md:grid-cols-1 gap-3">
-      <button
-         onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-         class="bg-black text-white p-3 rounded-full border"
-       >
-          <i class="fa fa-arrow-up"></i>
-        </button>
-        <!--BOTÃO HOUSE-->
-        <button id="buttom-house" class="bg-red-900 hidden text-white p-3 rounded-full border">
-        <a href="index.html"><i class="fa-solid fa-house"></i></a>
+<body class="bg-black text-white">
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-black">
+    <div class="grid grid-cols-1 sm:flex items-center gap-4 sm:justify-around shadow-[0_0_12px_rgb(237,187,25)]">
+      <img src="img/imgheader/motoboy_entrega.png" class="w-25 h-25 mx-auto sm:m-0" />
+      <img src="img/imgheader/image.png" class="h-12 ml-9" />
+      <button id="bnt-login" class="border h-fit border-amber-400 w-20 p-3 mb-2 rounded-sm mx-auto sm:m-0">
+        <p class="text-white font-semibold text-center hover:text-amber-400">
+          Login
+        </p>
       </button>
-     </div>
+    </div>
 
-     <!--exibindo tela carrinho-->
-     <div id="painel-car" class="hidden bg-black/60 w-full h-full fixed top-0 left-0 z-[99] justify-center items-center flex">
-      <div class="bg-blue-200 p-3 overflow-hidden min-w-[90%] min-h-[60px] md:min-w-[600] md:max-h-[500px] rounded-md">
-        <h1 class="bg-black/80 border border-white  p-2 text-white rounded-md text-center text- md:text-2xl font-semibold">Meu Carrinho</h1>
-        <!--Itens do carrinho adicionados-->
-        <div id="itens-adicioandos" class="grid grid-cols-1 max-h-[300px] overflow-y-auto pr-2"></div>
-        <!--Botões do carrinho-->
-        <div class=" button-0 z-50 justify-between flex items-center mt-2">
-          <i id="voltar" class="bg-black/80 border border-white p-2 text-white  rounded-md rounded-md fa-solid fa-arrow-left"></i>
-          <button class="bg-black/80 border border-white  p-2 text-white rounded-md">Pedido Concluído</button>
+    <div class="flex items-center justify-between px-4 sm:mt-3">
+      <button id="menu-toggle" class="text-2xl sm:hidden">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <h2 class="flex-1 text-center">Ter a Dom 18:40 às 22:00</h2>
+      <div id="shopping-carts" class="p-2 bg-red-500 w-10 text-center rounded-md">
+        <i class="fas fa-shopping-cart text-white text-sm"></i>
+      </div>
+    </div>
+
+    <!--Menu-->
+    <nav id="menu" class="hidden sm:flex mx-auto w-full max-w-4xl mt-6 sm:justify-between">
+      <ul class="grid grid-cols-4 sm:flex sm:gap-20 xl:justify-between bg-black/80 rounded-md font-semibold"></ul>
+    </nav>
+
+    <!--Mensagem de saída-->
+    <aside id="mensagemsaida" class="bg-red-900 p-2 opacity-0">
+      <h1 id="mensagem" class="text-center sm:text-2xl text-amber-400 font-semibold">
+        primeiro login = primeira entrega grátis
+      </h1>
+    </aside>
+  </header>
+
+  <main>
+    <!-- BANNER -->
+    <figure id="banner" class="bg-black rounded-lg shadow-lg w-full mx-auto overflow-hidden">
+      <div class="relative w-full h-72 overflow-hidden">
+        <div id="carousel-track" class="flex items-center h-full animate-carousel" style="width: max-content"></div>
+      </div>
+    </figure>
+
+    <!-- COMBOS -->
+    <section class=" max-w-7xl mx-auto px-6 w-full my-10 rounded-lg">
+      <h1 id="titulo" class="text-2xl text-center font-thin mt-10 mb-6">
+        Combos da Semana!
+      </h1>
+      <div id="combos" class="grid grid-cols-1 sm:grid-cols-3 p-4 gap-8"></div>
+    </section>
+
+    <!--Exibir itens do menu-->
+    <section id="section-generico" class="hidden max-w-7xl mx-auto px-6  my-10">
+      <div id="div-generica" class="grid grid-cols-1 md:grid-cols-3 gap-8 "></div>
+    </section>
+  </main>
+
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <div class="fixed bottom-3 right-3 z-50 md:grid md:grid-cols-1 gap-3">
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      class="bg-black text-white p-3 rounded-full border">
+      <i class="fa fa-arrow-up"></i>
+    </button>
+    <!--BOTÃO HOUSE-->
+    <button id="buttom-house" class="bg-red-900 hidden text-white p-3 rounded-full border">
+      <a href="index.html"><i class="fa-solid fa-house"></i></a>
+    </button>
+  </div>
+
+  <!--exibindo tela carrinho-->
+  <div id="painel-car"
+    class="hidden bg-black/60 w-full h-full fixed top-0 left-0 z-[99] justify-center items-center flex">
+    <div class="bg-blue-200 p-3 overflow-hidden min-w-[80px] min-h-[50px] md:min-w-[600px] md:max-h-[500px] rounded-md">
+      <h1
+        class="bg-black/80 border border-white  p-2 text-white rounded-md text-center text- md:text-2xl font-semibold">
+        Meu Carrinho</h1>
+      <!--Itens do carrinho adicionados-->
+      <div id="itens-adicioandos" class="grid grid-cols-1 max-h-[300px] overflow-y-auto pr-2"></div>
+      <!--Botões do carrinho-->
+      <div class=" button-0 z-50 justify-between flex items-center mt-2">
+        <i id="voltar-home"
+          class="bg-black/80 border border-white p-2 text-white  rounded-md rounded-md fa-solid fa-arrow-left"></i>
+        <button id="btn-Prenncher-Dados" class="bg-black/80 border border-white  p-2 text-white rounded-md">Prenncher
+          Dados</button>
+      </div>
+    </div>
+  </div>
+
+  <!--BOX DADOS-->
+  <div id="painel-dados"
+    class="hidden bg-black/60 w-full h-full fixed top-0 left-0 z-[99] justify-center items-center flex">
+    <div class="bg-blue-200 p-3 overflow-hidden min-w-[80px] min-h-[50px] md:min-w-[600px] md:max-h-[500px] rounded-md">
+      <h1
+        class="bg-black/80 border border-white  p-2 text-white rounded-md text-center text- md:text-2xl font-semibold">
+        Preencha os dados</h1>
+
+      <!--======PREENCHER DADOS=======-->
+      <form action="/enviar-pedido" method="POST"
+        class="max-h-[300px] overflow-y-auto pr-2 bg-white p-6 rounded-lg shadow-lg space-y-6 text-sm border border-gray-300">
+        <!-- Resumo do Pedido -->
+        <h2 class="text-xl font-semibold text-gray-900 border-b pb-2">📋 Resumo do Pedido</h2>
+        <div class="space-y-2 text-gray-800">
+          <p><strong>ID:</strong> PED20251013-001</p>
+          <p><strong>Produto:</strong> X-Burguer Clássico — <span class="text-gray-600">R$ 18,00</span></p>
+          <p><strong>Produto:</strong> Batata Média — <span class="text-gray-600">R$ 10,00</span></p>
+          <p><strong>Entrega:</strong> <span class="text-gray-600">R$ 5,00</span></p>
+          <p><strong>Total:</strong> <span class="text-black font-bold">R$ 33,00</span></p>
+          <p><strong>CNPJ:</strong> 12.345.678/0001-99</p>
+          <p><strong>Empresa:</strong> Dev Big Burguer</p>
+          <p><strong>Nota Fiscal:</strong> <a href="#" class="text-blue-600 underline">Ver nota</a></p>
+        </div>
+
+        <!-- Dados do Cliente -->
+        <h2 class="text-xl font-semibold text-gray-900 border-b pb-2">👤 Dados do Cliente</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <input type="text" name="nome_comprador" placeholder="Nome completo"
+            class="w-full border border-gray-300 rounded px-3 py-2 placeholder-black text-black focus:outline-none focus:ring-1 focus:ring-black">
+          <input type="tel" name="telefone" placeholder="Telefone"
+            class="w-full border border-gray-300 rounded px-3 py-2 placeholder-black text-black">
+          <input type="email" name="email" placeholder="Email (opcional)"
+            class="w-full border border-gray-300 rounded px-3 py-2 placeholder-black text-black">
+        </div>
+
+        <!-- Endereço de Entrega -->
+        <h2 class="text-xl font-semibold text-gray-900 border-b pb-2">📦 Endereço de Entrega</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <input type="text" name="numero" placeholder="Número da casa"
+            class="w-full border border-gray-300 rounded px-3 py-2 placeholder-black text-black">
+          <input type="text" name="rua" placeholder="Rua"
+            class="w-full border border-gray-300 rounded px-3 py-2 placeholder-black text-black">
+          <input type="text" name="bairro" placeholder="Bairro / Prédio / Condomínio"
+            class="w-full border border-gray-300 rounded px-3 py-2 placeholder-black text-black">
+          <input type="text" name="referencia" placeholder="Referência"
+            class="w-full border border-gray-300 rounded px-3 py-2 placeholder-black text-black">
+        </div>
+
+        <!-- Pagamento -->
+        <h2 class="text-xl font-semibold text-gray-900 border-b pb-2">💳 Pagamento</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <select name="pagamento" class="w-full border border-gray-300 rounded px-3 py-2 text-black">
+            <option value="">Forma de pagamento</option>
+            <option value="pix">PIX</option>
+            <option value="cartao">Cartão</option>
+            <option value="dinheiro">Dinheiro</option>
+          </select>
+          <input type="text" name="troco" placeholder="Troco necessário?"
+            class="w-full border border-gray-300 rounded px-3 py-2 placeholder-black text-black">
+        </div>
+
+        <!-- Observações -->
+        <h2 class="text-xl font-semibold text-gray-900 border-b pb-2">📝 Observações</h2>
+        <textarea name="observacao" placeholder="Ex: sem cebola, entregar no portão azul..."
+          class="w-full border border-gray-300 rounded px-3 py-2 h-20 resize-none placeholder-black text-black"></textarea>
+
+        <!-- Botão -->
+        <button type="submit" class="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition">Confirmar
+          Pedido</button>
+      </form>
+
+      <!--======================-->
+
+      <div class=" button-0 z-50 justify-between flex items-center mt-2">
+        <!--voltar a tela carrinho-->
+        <i id="voltar-tela-car"
+          class="bg-black/80 border border-white p-2 text-white  rounded-md rounded-md fa-solid fa-arrow-left"></i>
+        <!--Enviar pedido para comanda/whatsApp -->
+        <button id="bnt-enviar-pedido" class="bg-black/80 border border-white  p-2 text-white rounded-md">Enviar
+          pedido</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-black border-amarelo p-4 min-h-30 grid sm:flex justify-between gap-6 text-sm">
+    <div class="flex items-start gap-10">
+      <img src="img/imgheader/image.png" class="w-24 rounded mt-4" />
+      <div class="flex flex-col">
+        <p class="font-extralight">Localização: JP Rua xxx xxxxx n: ****</p>
+        <div class="flex gap-4 text-2xl mt-2">
+          <a href="#"><i class="fa-brands fa-instagram hover:shadow-fuchsia-700"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp hover:shadow-emerald-700"></i></a>
         </div>
       </div>
-     </div>
-      
-
-    <!-- FOOTER -->
-<footer class="bg-black border-amarelo p-4 min-h-30 grid sm:flex justify-between gap-6 text-sm">
-  <div class="flex items-start gap-10">
-    <img src="img/imgheader/image.png" class="w-24 rounded mt-4" />
-    <div class="flex flex-col">
-      <p class="font-extralight">Localização: JP Rua xxx xxxxx n: ****</p>
-      <div class="flex gap-4 text-2xl mt-2">
-        <a href="#"><i class="fa-brands fa-instagram hover:shadow-fuchsia-700"></i></a>
-        <a href="#"><i class="fa-brands fa-whatsapp hover:shadow-emerald-700"></i></a>
+    </div>
+    <div class="flex items-start gap-10">
+      <img src="img/marca.png" class="w-20 rounded-full mx-auto" />
+      <div class="flex flex-col">
+        <p class="font-extralight">Nome: Anderson Matheus ... Criador do site</p>
+        <div class="flex gap-4 text-2xl mt-2">
+          <a href="#"><i class="fa-brands fa-instagram hover:shadow-fuchsia-700"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin hover:shadow-blue-500"></i></a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="flex items-start gap-10">
-    <img src="img/marca.png" class="w-20 rounded-full mx-auto" />
-    <div class="flex flex-col">
-      <p class="font-extralight">Nome: Anderson Matheus ... Criador do site</p>
-      <div class="flex gap-4 text-2xl mt-2">
-        <a href="#"><i class="fa-brands fa-instagram hover:shadow-fuchsia-700"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin hover:shadow-blue-500"></i></a>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-    <script type="module" src="main.js"></script>
-  </body>
+  <script type="module" src="main.js"></script>
+</body>
+
 </html>
