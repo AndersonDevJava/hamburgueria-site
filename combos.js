@@ -4,74 +4,74 @@
 
   const menu = {
     Hamburgues: [
-      {img: "img/hamb-2.png", title: "Especial 1", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
-      {img: "img/hamb-3.png", title: "Especial 2", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
-      {img: "img/hamb-4.png", title: "Especial 3", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
-      {img: "img/hamb-5.png", title: "Especial 4", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
-      {img: "img/hamb-6.png", title: "Especial 5", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
-      {img: "img/hamb-7.png", title: "Especial 6", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
+      {img: "src/img/hamb-2.png", title: "Especial 1", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
+      {img: "src/img/hamb-3.png", title: "Especial 2", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
+      {img: "src/img/hamb-4.png", title: "Especial 3", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
+      {img: "src/img/hamb-5.png", title: "Especial 4", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
+      {img: "src/img/hamb-6.png", title: "Especial 5", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
+      {img: "src/img/hamb-7.png", title: "Especial 6", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon},
     ],
     Salgados: [
-      {img: "img/imgMenu/Salgados/bauru.png", title: "Bauru Tradicional", desc: "Pão macio recheado com presunto, queijo derretido e toque especial da casa.", price: "12,99", icone: defaultIcon},
-      {img: "img/imgMenu/Salgados/coxinha.png", title: "Coxinha", desc: "Clássica coxinha com massa leve e recheio de frango cremoso, empanada e frita.", price: "7,49", icone: defaultIcon},
-      {img: "img/imgMenu/Salgados/enroladinho.png", title: "Enroladinho de Salsicha	", desc: "Massa dourada e fofa enrolada em salsicha suculenta, ideal para qualquer hora.", price: "6,49", icone: defaultIcon},
-      {img: "img/imgMenu/Salgados/quibe.png", title: "Quibe", desc: "Bolinho de trigo com carne moída e hortelã, frito até ficar dourado e crocante.", price: "6,49", icone: defaultIcon},
-      {img: "img/imgMenu/Salgados/paoDeQueijo.png", title: "Pão de Queijo (porção)", desc: "Porção com 5 pãezinhos de queijo, crocantes por fora e macios por dentro.", price: "10,99", icone: defaultIcon},
-      {img: "img/imgMenu/Salgados/pasteu.png", title: "Empanada", desc: "Massa crocante em formato de meia-lua, recheada com carne temperada e suculenta.", price: "6,99", icone: defaultIcon},
+      {img: "src/img/imgMenu/Salgados/bauru.png", title: "Bauru Tradicional", desc: "Pão macio recheado com presunto, queijo derretido e toque especial da casa.", price: "12,99", icone: defaultIcon},
+      {img: "src/img/imgMenu/Salgados/coxinha.png", title: "Coxinha", desc: "Clássica coxinha com massa leve e recheio de frango cremoso, empanada e frita.", price: "7,49", icone: defaultIcon},
+      {img: "src/img/imgMenu/Salgados/enroladinho.png", title: "Enroladinho de Salsicha	", desc: "Massa dourada e fofa enrolada em salsicha suculenta, ideal para qualquer hora.", price: "6,49", icone: defaultIcon},
+      {img: "src/img/imgMenu/Salgados/quibe.png", title: "Quibe", desc: "Bolinho de trigo com carne moída e hortelã, frito até ficar dourado e crocante.", price: "6,49", icone: defaultIcon},
+      {img: "src/img/imgMenu/Salgados/paoDeQueijo.png", title: "Pão de Queijo (porção)", desc: "Porção com 5 pãezinhos de queijo, crocantes por fora e macios por dentro.", price: "10,99", icone: defaultIcon},
+      {img: "src/img/imgMenu/Salgados/pasteu.png", title: "Empanada", desc: "Massa crocante em formato de meia-lua, recheada com carne temperada e suculenta.", price: "6,99", icone: defaultIcon},
     ]
   }
 
   const combos = {
     salgados: [
-      { img: "img/imgcomboSemana/comboSalgado/especialCB.png", title: "Especial", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon },
-      { img: "img/imgcomboSemana/comboSalgado/Quatroirmaos.png", title: "Quatro Irmãos", desc: "4 hamburguers tradicionais, carne, pão alface molho e picles.", price: "35,99", icone: defaultIcon },
-      { img: "img/imgcomboSemana/comboSalgado/especialEspecialCB.png", title: "Especial especial", desc: "1 pizza pequena de calabresa com 1 coca lata.", price: "35,99", icone: defaultIcon },
-      { img: "img/imgcomboSemana/comboSalgado/cafeManhaCB.jpeg", title: "Café da Manhã", desc: "Servimos apenas no restaurante local.", price: "35,99", icone: defaultIcon },
-      { img: "img/imgcomboSemana/comboSalgado/solteiroCB.png", title: "Solteiro", desc: "1 hamburguer com 1 batata média.", price: "35,99", icone: defaultIcon },
-      { img: "img/imgcomboSemana/comboSalgado/familiaCB.png", title: "Família", desc: "3 hamburguers tradicionais, 1 coca 2L, 1 pizza média e 2 batatas médias", price: "35,99", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/comboSalgado/especialCB.png", title: "Especial", desc: "1 Hamburguer tradicional, 1 batata média e 1 coca lata.", price: "35,99", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/comboSalgado/Quatroirmaos.png", title: "Quatro Irmãos", desc: "4 hamburguers tradicionais, carne, pão alface molho e picles.", price: "35,99", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/comboSalgado/especialEspecialCB.png", title: "Especial especial", desc: "1 pizza pequena de calabresa com 1 coca lata.", price: "35,99", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/comboSalgado/cafeManhaCB.jpeg", title: "Café da Manhã", desc: "Servimos apenas no restaurante local.", price: "35,99", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/comboSalgado/solteiroCB.png", title: "Solteiro", desc: "1 hamburguer com 1 batata média.", price: "35,99", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/comboSalgado/familiaCB.png", title: "Família", desc: "3 hamburguers tradicionais, 1 coca 2L, 1 pizza média e 2 batatas médias", price: "35,99", icone: defaultIcon },
     ],
 
     doces: [
-      { img: "img/imgcomboSemana/comboDoces/comboleve.png", title: "Combo leve", desc: "Cookie macio com gotas de chocolate e milkshake leve de chocolate.", price: "16,90", icone: defaultIcon },
-      { img: "img/imgcomboSemana/comboDoces/docedelicia.png", title: "Combo Doce Delícia", desc: "Rosquinha com cobertura de chocolate e bowl de balas de goma coloridas.", price: "22,90", icone: defaultIcon },
-      { img: "img/imgcomboSemana/comboDoces/encantado.png", title: "Combo Encantado", desc: "Bolo de chocolate, milkshake cremoso e sorvete colorido.", price: "27,90", icone: defaultIcon },
-      { img: "img/imgcomboSemana/comboDoces/Megadocao.png", title: "Mega Combodocão", desc: "Milkshake, donuts extras, brownie e bowl de confeitos crocantes.", price: "29,90", icone: defaultIcon },
-      { img: "img/imgcomboSemana/comboDoces/minicombosso.png", title: "Mini Combosso", desc: "Milkshake com donut, donut holes e macarons sortidos.", price: "14,90", icone: defaultIcon },
-      { img: "img/imgcomboSemana/comboDoces/superdocao.png", title: "Super Combodocão", desc: "Milkshake com donut, cupcakes, macarons e cookies recheados.", price: "16,90", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/comboDoces/comboleve.png", title: "Combo leve", desc: "Cookie macio com gotas de chocolate e milkshake leve de chocolate.", price: "16,90", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/comboDoces/docedelicia.png", title: "Combo Doce Delícia", desc: "Rosquinha com cobertura de chocolate e bowl de balas de goma coloridas.", price: "22,90", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/comboDoces/encantado.png", title: "Combo Encantado", desc: "Bolo de chocolate, milkshake cremoso e sorvete colorido.", price: "27,90", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/comboDoces/Megadocao.png", title: "Mega Combodocão", desc: "Milkshake, donuts extras, brownie e bowl de confeitos crocantes.", price: "29,90", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/comboDoces/minicombosso.png", title: "Mini Combosso", desc: "Milkshake com donut, donut holes e macarons sortidos.", price: "14,90", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/comboDoces/superdocao.png", title: "Super Combodocão", desc: "Milkshake com donut, cupcakes, macarons e cookies recheados.", price: "16,90", icone: defaultIcon },
     ],
 
     mistos: [
-      { img: "img/imgcomboSemana/combodocesSalgados/bigbombox.png", title: "Dev Big BomBBox", desc: "Hambúrguer suculento, batata crocante e milkshake cremoso.", price: "29,90", icone: defaultIcon },
-      { img: "img/imgcomboSemana/combodocesSalgados/combao.png", title: "Dev Big Combão", desc: "Batata frita, coxinha, milkshake e cupcake cremoso.", price: "26,90", icone: defaultIcon },
-      { img: "img/imgcomboSemana/combodocesSalgados/combodelicia.png", title: "Combo Delícia", desc: "Cheeseburger, batata frita e sundae de morango.", price: "26,90", icone: defaultIcon },
-      { img: "img/imgcomboSemana/combodocesSalgados/megamix.png", title: "Mega Combomix", desc: "Hambúrguer, batata frita, donut rosa, milkshake e nuggets.", price: "39,90", icone: defaultIcon },
-      { img: "img/imgcomboSemana/combodocesSalgados/superbox.png", title: "Super BomBBox", desc: "Coxinha, cupcake, batata crocante e milkshake especial.", price: "34,90", icone: defaultIcon },
-      { img: "img/imgcomboSemana/combodocesSalgados/superburguer.png", title: "Super Comboburguer", desc: "Cheeseburger, batata frita, milkshake com donut e sundae.", price: "36,90", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/combodocesSalgados/bigbombox.png", title: "Dev Big BomBBox", desc: "Hambúrguer suculento, batata crocante e milkshake cremoso.", price: "29,90", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/combodocesSalgados/combao.png", title: "Dev Big Combão", desc: "Batata frita, coxinha, milkshake e cupcake cremoso.", price: "26,90", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/combodocesSalgados/combodelicia.png", title: "Combo Delícia", desc: "Cheeseburger, batata frita e sundae de morango.", price: "26,90", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/combodocesSalgados/megamix.png", title: "Mega Combomix", desc: "Hambúrguer, batata frita, donut rosa, milkshake e nuggets.", price: "39,90", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/combodocesSalgados/superbox.png", title: "Super BomBBox", desc: "Coxinha, cupcake, batata crocante e milkshake especial.", price: "34,90", icone: defaultIcon },
+      { img: "src/img/imgcomboSemana/combodocesSalgados/superburguer.png", title: "Super Comboburguer", desc: "Cheeseburger, batata frita, milkshake com donut e sundae.", price: "36,90", icone: defaultIcon },
     ]
   };
 
     const itensMenu = [
-      { img: 'img/imgMenu/Salgados/hamb-1Mn.png', title: 'Hamburgues' },
-      { img: 'img/imgMenu/Salgados/coxinhaMn.png', title: 'Salgados' },
-      { img: 'img/imgMenu/Salgados/pizzaMn.png', title: 'Pizzas' },
-      { img: 'img/imgMenu/combos/comboMn.png', title: 'Combos' },
-      { img: 'img/imgMenu/Gelados/acaiMn.png', title: 'acaí' },
-      { img: 'img/imgMenu/Liquidos/bebidasMn.png', title: 'Bebidas' },
+      { img: 'src/img/imgMenu/Salgados/hamb-1Mn.png', title: 'Hamburgues' },
+      { img: 'src/img/imgMenu/Salgados/coxinhaMn.png', title: 'Salgados' },
+      { img: 'src/img/imgMenu/Salgados/pizzaMn.png', title: 'Pizzas' },
+      { img: 'src/img/imgMenu/combos/comboMn.png', title: 'Combos' },
+      { img: 'src/img/imgMenu/Gelados/acaiMn.png', title: 'acaí' },
+      { img: 'src/img/imgMenu/Liquidos/bebidasMn.png', title: 'Bebidas' },
     ]
 
       const banner = [
-      { img: 'img/hamb-2.png' },
-      { img: 'img/agua.png' },
-      { img: 'img/hamb-3.png' },
-      { img: 'img/Suco-1.png' },
-      { img: 'img/hamb-4.png' },
-      { img: 'img/suco-2.png' },
-      { img: 'img/hamb-5.png' },
-      { img: 'img/acaii.png' },
-      { img: 'img/hamb-6.png' },
-      { img: 'img/guarana.png' },
-      { img: 'img/hamb-7.png' },
-      { img: 'img/coca-cola.png' },
+      { img: 'src/img/hamb-2.png' },
+      { img: 'src/img/agua.png' },
+      { img: 'src/img/hamb-3.png' },
+      { img: 'src/img/Suco-1.png' },
+      { img: 'src/img/hamb-4.png' },
+      { img: 'src/img/suco-2.png' },
+      { img: 'src/img/hamb-5.png' },
+      { img: 'src/img/acaii.png' },
+      { img: 'src/img/hamb-6.png' },
+      { img: 'src/img/guarana.png' },
+      { img: 'src/img/hamb-7.png' },
+      { img: 'src/img/coca-cola.png' },
     ]
     
     const containerCombos = document.getElementById('combos')
